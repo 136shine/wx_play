@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="goApp">
+    <button bindtap="bindGoApp"> 开始体验 </button>
+  </view>
+</view>

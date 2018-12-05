@@ -1,0 +1,21 @@
+<view>
+  <view class='movieWrap'>
+    <image class='movieCover' src="{{movieItem.images.large}}"></image>
+    <view class='mainDesc'>
+      <text class='title'>{{movieItem.title}}</text>
+      <text class='date'>{{movieItem.pubdate}}</text>
+      <text class='type'>{{movieItem.genres}}</text>
+      <text class='directors'>导演：{{movieItem.directors[0].name}}</text>
+    </view>
+    <view class='biaoshi'>
+      <text>"</text>
+      <text class='txt'>电</text>
+      <text class='txt'>影</text>
+      <text>"</text>
+    </view>
+    <view class='movieTxt'>
+      <text class='summary'>简介</text>
+      <text class='txt'>{{movieItem.summary}}</text>
+    </view>
+  </view>
+</view>

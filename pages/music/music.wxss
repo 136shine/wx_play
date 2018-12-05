@@ -1,0 +1,205 @@
+.music-wrap {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ box-sizing: border-box;
+ padding: 10rpx 14rpx;
+}
+.music-wrap .top-fixed {
+  position: fixed; 
+  top: 0rpx; 
+  left: 10rpx; 
+  width: 100%; 
+  height: 300rpx; 
+  z-index: 999; 
+  background: #fff;
+}
+.top-wrap {
+  width: 100%;
+  height: 100%;
+  /* height: 300rpx; */
+  background: #f3f3f379;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.top-wrap .album-pic {
+  width: 200rpx;
+  height: 200rpx;
+  padding: 0rpx 30rpx;
+}
+.top-wrap .album-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.album-info .album-title {
+  
+}
+.album-info .album-desc {
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  color: #b1afaf;
+}
+
+.play-all {
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  align-items: center;
+  margin-top: 300rpx;
+  border-bottom: 2rpx solid #b1afaf;
+  font-size: 30rpx;
+  color: #1ca6f7ef;
+}
+.play-all image {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0rpx 30rpx 0rpx 20rpx;
+}
+
+
+
+.scroll-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20rpx;
+  width: 100%;
+  height: 1000rpx;
+  /* height: calc(100% - 300rpx); */
+  /* height: 100%; */
+}
+.list-view-wrap  {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 120rpx;
+  margin: 20rpx 0rpx; 
+  padding: 0rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f3f3f3;
+}
+.music-index {
+  width: 70rpx;
+  text-align: left;
+  flex: 1 0 auto;
+  font-weight: normal;
+  font-size: 28rpx;
+}
+.music-info {
+  width: 400rpx;
+  flex: 5 0 auto;
+}
+.music-info .music-song {
+  width: 100%;
+  font-size:32rpx;
+  color: #000;
+}
+.music-info .music-singer {
+  width: 100%;
+  color: rgb(187, 184, 184);
+  font-size: 28rpx;
+}
+
+.jump-icon {
+  width: 40rpx;
+  height: 50rpx;
+  text-align: right;
+}
+
+
+
+/* .animationScale {
+  animation-name: imgScale; 
+  animation-duration: 2000ms; 
+  animation-timing-function: linear; 
+  animation-fill-mode: forwards;
+  -webkit-animation-name: imgScale;
+  -webkit-animation-duration: 2000ms;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+} */
+
+/* 图片缩小动画 */
+.animationScale {
+  animation: imgScale 900ms linear forwards;
+  -webkit-animation: imgScale 900ms linear forwards;
+}
+@keyframes imgScale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.7);
+  }
+}
+/*兼容ios*/
+@-webkit-keyframes imgScale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.7);
+  }
+}
+
+/* top整体高度缩小动画 */
+.animationScaleY {
+  font-size: 28rpx;
+  transform-origin: center top;
+  -webkit-transform-origin: center top;
+  animation: topScaleY 900ms ease-out forwards;
+  -webkit-animation: topScaleY 900ms ease-out forwards;
+}
+@keyframes topScaleY {
+  from {
+    /* transform: scaleY(1); */
+    height: 300rpx;
+  }
+  to {
+    /* transform: scaleY(0.7); */
+    height: 210rpx;
+  }
+}
+/*兼容ios*/
+@-webkit-keyframes topScaleY {
+  from {
+     height: 300rpx;
+  }
+  to {
+     height: 210rpx;
+  }
+}
+
+/* margin-top缩小动画 */
+.animationMarginScaleY {
+  transform-origin: center top;
+  -webkit-transform-origin: center top;
+  animation: marginScaleY 900ms ease-out forwards;
+  -webkit-animation: marginScaleY 900ms ease-out forwards;
+}
+@keyframes marginScaleY {
+  from {
+    /* transform: scaleY(1); */
+    margin-top: 300rpx;
+  }
+  to {
+    /* transform: scaleY(0.7); */
+    margin-top: 210rpx;
+  }
+}
+/*兼容ios*/
+@-webkit-keyframes marginScaleY {
+  from {
+    margin-top: 300rpx;
+  }
+  to {
+    margin-top: 210rpx;
+  }
+}

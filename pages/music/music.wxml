@@ -1,0 +1,28 @@
+<view class='music-wrap'>
+  <view class="top-fixed {{isStartChange?'animationScaleY':''}}" style=''>
+    <view class='top-wrap'>
+      <image class="album-pic {{isStartChange?'animationScale':''}}" src='../../images/music_list_cover.png'></image>
+      <view class='album-info'>
+        <view class='album-title'>古风一「起」歌单</view>
+        <view class='album-desc'>古风肆玩丨长歌清酒，一曲浮生梦</view>
+      </view>
+    </view>
+  </view>
+  <view class="play-all {{isStartChange?'animationMarginScaleY':''}}"  bindtap="handelPlayAll">
+    <image src="../../images/icon/icon-play-all.png"></image>
+    <view>播放全部</view>
+  </view>
+  <scroll-view class="scroll-wrap" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower" bindscroll="startScroll">
+    <block wx:for="{{musics}}" wx:key="{{music.ID}}" wx:for-item="music" wx:for-index="{{music.index}}">
+      <view class="list-view-wrap" bindtap="handelGoDetail" data-id="{{music.FileHash}}" data-index="{{music.index}}">
+        <view class='music-index'>{{music.index}}</view>
+        <view class='music-info'>
+          <view class='music-song'>{{music.SongName}}</view> 
+          <view class='music-singer'>{{music.SingerName}}</view>
+        </view>
+        <image class='jump-icon' src='../../images/icon-arrow-right.png'></image>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+

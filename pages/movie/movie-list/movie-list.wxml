@@ -1,0 +1,17 @@
+<template name="movieType">
+  <view class="movieWrap">
+    <view class="titleHeader">
+      <text class="movieTypeName">{{title}}</text>
+      <text class="movieMore" bindtap="bindLoadMore" data-category="{{title}}">更多</text>
+    </view>
+    <view class="movieContent">
+      <view wx:for="{{subjects}}" wx:for-item="item" class='moiveItem' bindtap="bindGoDetail" data-movieid="{{item.id}}">
+        <image src="{{item.images.small}}"></image>
+        <view class="movieDesc">
+          <text class="title">{{item.title}}</text>
+          <text class="grade">{{item.rating.average}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

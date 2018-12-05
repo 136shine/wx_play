@@ -1,0 +1,32 @@
+<view class='music-detail-wrap'>
+  <text class='music-title'>{{music.song_name}}</text>
+  <view class='music-play'>
+    <image class="{{isPlay?'coverRotate':''}}" src="{{music.img}}"></image>
+  </view>
+  <view class='music-detail-info'>
+    <view class='music-singers'>{{singers}}</view>
+    <view class='lyric-wrap' wx:if="isShow">{{currLine}}</view>
+  </view>
+
+ 
+  <!-- <text>{{currTime}}</text> -->
+  <!-- <block class='lyric-wrap' wx:if="{{line.time/1000 < currTime}}" wx:for="{{lyricLines}}" wx:for-item="line">
+    {{line.txt}}
+  </block> -->
+  <!-- slider 不可被view包裹 -->
+  <block class='slider-wrap'>
+    <slider class='music-slider' bindchange="handelSliderChange" block-size="12px" step="2" value="{{currTime}}" max="{{duration}}" activeColor="#1aad19" backgroundColor="#ccc"/>
+    <text class='slider-time'>{{ftCurrTime}} / {{ftDuration}}</text>
+  </block>
+  
+
+  <view class='music-control'>
+    <image class='play-icon play-prev' src='../../../images/icon/icon-play-prev-1.png' bindtap="handelPlayPrev"></image>
+    <image wx:if="{{!isPlay}}" class='play-icon play-state' src='../../../images/icon/icon-pause.png' bindtap="handelPlay"></image>
+    <image wx:else class='play-icon play-state' src='../../../images/icon/icon-play.png' bindtap="handelPause"></image>
+    <image class='play-icon play-next' src='../../../images/icon/icon-play-next-1.png' bindtap="handelPlayNext"></image>
+    <image class='play-icon play-mode' src='../../../images/icon/{{modeIcon}}.png' bindtap="handelChangePlayMode"></image>
+  </view>
+  <!-- <view><audio name="{{music.song_name}}" author="{{singers}}" src="{{music.play_url}}" id="myAudio" poster="{{music.img}}" controls loop action="{{action}}"></audio></view> -->
+  <!-- <button bindtap="play">play</button> -->
+</view>

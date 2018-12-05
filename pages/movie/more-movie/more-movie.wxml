@@ -1,0 +1,11 @@
+<view>
+  <view class="movieContent">
+      <view wx:for="{{movies}}" wx:for-item="item" class='moiveItem' bindtap="bindGoDetail" data-movieid="{{item.id}}">
+        <image src="{{item.images.small}}"></image>
+        <view class="movieDesc">
+          <text class="title">{{item.title}}</text>
+          <text class="grade">{{item.rating.average}}</text>
+        </view>
+      </view>
+  </view>
+</view>

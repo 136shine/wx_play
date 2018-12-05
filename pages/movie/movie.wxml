@@ -1,0 +1,17 @@
+<!--movie.wxml-->
+<import src="./movie-list/movie-list.wxml" />
+<view class="movieContainer">
+  <view class="searchBox">
+    <input class="searchInput" bindinput="bindKeyInput" placeholder="输入电影名"></input>
+    <image class="searchBtn" src="/images/search.png" bindtap="bindSearchMovie"></image>
+  </view>
+  <view>
+   <template is="movieType" data="{{...inTheatersData}}"></template>
+  </view>
+  <view>
+   <template is="movieType" data="{{...comingSoonData}}"></template>
+  </view>
+  <view>
+   <template is="movieType" data="{{...top250Data}}"></template>
+  </view>
+</view>

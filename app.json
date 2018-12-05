@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/music/music",
+    "pages/innerAudio/innerAudio",
+    
+    "pages/movie/movie",
+    "pages/index/index",
+    "pages/movie/movie-list/movie-list",
+    "pages/movie/more-movie/more-movie",
+    "pages/movie/movie-detail/movie-detail",
+    "pages/book/book",
+    "pages/book/book-detail/book-detail",
+    "pages/music/music-detail/music-detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/movie/movie",
+      "iconPath": "images/icon/icon-movie.png",
+      "selectedIconPath": "images/icon/icon-movie-active.png"
+    }, {
+      "pagePath": "pages/music/music",
+      "iconPath": "images/icon/icon-music.png",
+      "selectedIconPath": "images/icon/icon-music-active.png"
+    }]
+  }
+}

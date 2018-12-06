@@ -31,6 +31,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    
     let musicId = null
 
     if (options && options.id) {
@@ -44,12 +45,23 @@ Page({
 
     this.innerAudioContext = wx.createInnerAudioContext()
 
-    // 进入该页面自动播放
-    // this.handelPlay()
     this.setData({
       isPlay: true
     })
     this.innerAudioContext.autoplay = true
+
+    // 进入该页面自动播放
+    // this.handelPlay()
+    // console.log('app.globalData.playState=>', app.globalData.playState)
+    // if (app.globalData.playState === 'PAUSE') {
+    //   this.setData({
+    //     isPlay: true
+    //   })
+    //   this.innerAudioContext.autoplay = true
+    //   app.globalData.playState = 'PLAY'
+      
+    // }
+    
 
     //监听开始播放
     this.innerAudioContext.onPlay(() => {
@@ -63,7 +75,6 @@ Page({
     // 监听更新播放进度
     this.innerAudioContext.onTimeUpdate(() => {
       // console.log('改变播放进度。。')
-      // this.innerAudioContext.seek(this.innerAudioContext.currentTime)
       this.data.lyricObj.seek(this.innerAudioContext.currentTime * 1000)
 
       this.setData({
@@ -78,6 +89,7 @@ Page({
         isPlay: false
       })
       this.innerAudioContext.pause()
+      app.globalData.playState = 'PAUSE'
       this.data.lyricObj.stop()
       
       this.setData({
@@ -90,7 +102,6 @@ Page({
       console.log('接着下一首。。')
       console.log('app.globalData.currSongIndex=>0', app.globalData.currSongIndex)
       this.palyPrevOrNext('next')
-      // this.handelPlayNext()
     })
     // 监听播放出现的错误
     this.innerAudioContext.onError((res) => {
@@ -151,6 +162,7 @@ Page({
       isPlay: true
     })
     this.innerAudioContext.play()
+    app.globalData.playState = 'PLAY'
   },
   
   handelPause: function () {
@@ -159,6 +171,7 @@ Page({
       isPlay: false
     })
     this.innerAudioContext.pause()
+    app.globalData.playState = 'PAUSE'
     this.data.lyricObj.stop()
   },
 
@@ -281,7 +294,7 @@ Page({
   // 歌词解析回调，显示正在播放的歌词
   hanlder: function({ lineNum, txt }){
     // this hanlder called when lineNum change
-    console.log('lineNum, txt=>', lineNum, txt, this.data.lyricObj.lines.length)
+    // console.log('lineNum, txt=>', lineNum, txt, this.data.lyricObj.lines.length)
     if (lineNum < this.data.lyricObj.lines.length) {
       this.setData({
         currLine: txt

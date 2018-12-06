@@ -85,6 +85,11 @@
   box-sizing: border-box;
   border-bottom: 1rpx solid #f3f3f3;
 }
+.icon-playing {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+}
 .music-index {
   width: 70rpx;
   text-align: left;

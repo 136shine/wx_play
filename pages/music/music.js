@@ -11,6 +11,7 @@ Page({
     topHeight: '300rpx',
     isStartChange: false,
     musics: [],
+    currSongId: '',
   },
 
   startScroll: function (ev) {
@@ -59,6 +60,7 @@ Page({
     findByKeyword('song_search_v2', 1, 20, '剑三').then(res => {
       let lists = res.data.lists
       lists.forEach((item, index)=>{
+        // item.isPlaying = false
         item.index = formatNumber(index + 1)
       })
       // console.log('list_res=>', res)
@@ -70,21 +72,28 @@ Page({
         app.globalData.songList = this.data.musics
       }
       console.log('musics=>', this.data.musics)
+
+      
     })
+
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    console.log('onReady...')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    console.log('onShow...')
+    this.setData({
+      currSongId: app.globalData.currSong.ID || ''
+    })
   },
 
   /**

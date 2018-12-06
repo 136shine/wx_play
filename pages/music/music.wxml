@@ -16,6 +16,8 @@
     <block wx:for="{{musics}}" wx:key="{{music.ID}}" wx:for-item="music" wx:for-index="{{music.index}}">
       <view class="list-view-wrap" bindtap="handelGoDetail" data-id="{{music.FileHash}}" data-index="{{music.index}}">
         <view class='music-index'>{{music.index}}</view>
+        <image hidden="{{music.ID !== currSongId}}" class='icon-playing' src='../../images/icon/icon-playing.gif'></image>
+        <text>{{music.isPlaying}}</text>
         <view class='music-info'>
           <view class='music-song'>{{music.SongName}}</view> 
           <view class='music-singer'>{{music.SingerName}}</view>

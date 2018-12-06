@@ -1,8 +1,6 @@
 {
   "pages":[
     "pages/music/music",
-    "pages/innerAudio/innerAudio",
-    
     "pages/movie/movie",
     "pages/index/index",
     "pages/movie/movie-list/movie-list",

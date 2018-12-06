@@ -4,6 +4,7 @@ App({
   globalData: {
     currSong: {},
     currSongIndex: 0,
-    songList: []
+    songList: [],
+    playState: 'PAUSE'
   }
 })

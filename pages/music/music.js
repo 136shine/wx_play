@@ -15,7 +15,7 @@ Page({
   },
 
   startScroll: function (ev) {
-    console.log('startScroll-ev=>', ev)
+    // console.log('startScroll-ev=>', ev)
     if (ev.detail.deltaY < -4) {
       this.setData({
         topHeight: (300 * 0.7) + 'rpx',
@@ -24,7 +24,7 @@ Page({
     }
   },
   onScrollLower: function (ev) {
-    console.log('onScrollLower-ev=>', ev)
+    // console.log('onScrollLower-ev=>', ev)
   },
 
   // 播放全部
@@ -33,7 +33,7 @@ Page({
       app.globalData.currSong = this.data.musics[0]
       app.globalData.currSongIndex = this.data.musics[0].index
     }
-    console.log('app.globalData.currSong=>', app.globalData.currSong)
+    // console.log('app.globalData.currSong=>', app.globalData.currSong)
     wx.navigateTo({
       url: 'music-detail/music-detail',
     })
@@ -44,10 +44,20 @@ Page({
     let musicId = ev.currentTarget.dataset.id
     let musicIndex = Number(ev.currentTarget.dataset.index)
 
-    if (this.data.musics && this.data.musics.length > 0) {
+    console.log('currSong=>', app.globalData.currSong, musicId, app.globalData.currSong.FileHash)
+    if (app.globalData.currSong.FileHash === musicId) {
+      console.log('ssssssooosss')
+      app.globalData.isFirst = false
+      console.log('app.globalData.isFirst=>', app.globalData.isFirst)
+    }
+
+    if (app.globalData.currSong.FileHash !== musicId && this.data.musics && this.data.musics.length > 0) {
+      app.globalData.isFirst = true
       app.globalData.currSong = this.data.musics[musicIndex-1]
       app.globalData.currSongIndex = musicIndex-1
     }
+    
+  
     wx.navigateTo({
       url: "music-detail/music-detail?id=" +musicId
     })
@@ -71,9 +81,7 @@ Page({
       if (this.data.musics && this.data.musics.length > 0) {
         app.globalData.songList = this.data.musics
       }
-      console.log('musics=>', this.data.musics)
-
-      
+      // console.log('musics=>', this.data.musics)
     })
 
     
@@ -83,14 +91,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log('onReady...')
+    // console.log('onReady...')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('onShow...')
+    // console.log('onShow...')
     this.setData({
       currSongId: app.globalData.currSong.ID || ''
     })

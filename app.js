@@ -5,6 +5,8 @@ App({
     currSong: {},
     currSongIndex: 0,
     songList: [],
-    playState: 'PAUSE'
+    playState: 'PAUSE',
+    isFirst: true,
+    innerAudioContext: wx.createInnerAudioContext()
   }
 })

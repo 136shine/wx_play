@@ -117,7 +117,7 @@ export default class Lyric {
       this._callHandler(this.curNum - 1)
     }
 
-    console.log('len=>',this.curNum, this.lines.length)
+    // console.log('len=>',this.curNum, this.lines.length)
     if (this.curNum < this.lines.length) {
       clearTimeout(this.timer)
       this._playRest()
@@ -141,7 +141,7 @@ export default class Lyric {
   stop() {
     this.state = STATE_PAUSE
     clearTimeout(this.timer)
-    console.log('ssss')
+    // console.log('ssss')
   }
 
   // 跳转

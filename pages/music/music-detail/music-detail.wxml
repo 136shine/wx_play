@@ -1,11 +1,11 @@
 <view class='music-detail-wrap'>
   <text class='music-title'>{{music.song_name}}</text>
   <view class='music-play'>
-    <image class="{{isPlay?'coverRotate':''}}" src="{{music.img}}"></image>
+    <image mode="aspectFill" class="{{isPlay?'coverRotate':''}}" src="{{music.img}}"></image>
   </view>
   <view class='music-detail-info'>
     <view class='music-singers'>{{singers}}</view>
-    <view class='lyric-wrap' wx:if="isShow">{{currLine}}</view>
+    <view class='lyric-wrap' hidden="{{!isShow}}">{{currLine}}</view>
   </view>
 
  

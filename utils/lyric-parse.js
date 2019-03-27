@@ -112,8 +112,8 @@ export default class Lyric {
 
     this.curNum = this._findCurNum(startTime)
     this.startStamp = +new Date() - startTime
-
-    if (!skipLast && this.curNum < this.lines.length-1) {
+      // && this.curNum < this.lines.length - 1
+    if (!skipLast) {
       this._callHandler(this.curNum - 1)
     }
 
